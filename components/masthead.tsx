@@ -1,15 +1,30 @@
-import React from 'react'
+import React, {useRef, useContext, useState, useCallback } from 'react'
 import Image from 'next/image'
+import { ScrollContext } from '../utils/scroll-observer'
+
 
 const Masthead: React.FC = () => {
+    const refContainer = useRef<HTMLDivElement>(null)
+    const {scrollY} = useContext(ScrollContext)
+
+    let progress = 0;
+
+    const {current: elContainer} = refContainer
+    if(elContainer){
+        progress = Math.min(1, scrollY / elContainer.clientHeight)
+    }
     return (
-        <div className='min-h-screen flex flex-col items-center justify-center'>
-            {/* Video background incase a replacement is found for vanta.js
-            <video autoPlay loop muted playsInline className='absolute w-full h-full object-cover'>
-                <source src="" type ="video/mp4; codecs=hvc1" title="video background"/>
-                <source src="" type ="video/web; codecs=vp9" title="video background"/>
-            </video>
-            */}
+        <div ref={refContainer} className='min-h-screen flex flex-col items-center justify-center sticky top-0 -z-10' 
+        style={{
+            transform: `translateY(-${progress * 20}vh)`
+        }}
+        >
+            {/* Video background incase a replacement is found for vanta.js */}
+            <video autoPlay={true} loop muted playsInline className='absolute w-full h-full object-cover'>
+                <source src="/assets/palm-tree-bg.mp4" type = "video/mp4; codecs=hvc1" />
+                <source src="/assets/palm-tree-bg.webm" type = "video/webm; codecs=vp9"/>
+            </video> 
+            
             <div className={`flex-grow-0 pt-10 transition-opacity duration-1000`}>
                 <Image src='' width={128/3} height={114/3} alt="logo" />
             </div>
