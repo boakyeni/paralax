@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+html ,
 body {
   
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -19,12 +19,12 @@ a {
   box-sizing: border-box;
 }
 
-/*@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
+    color: black;
     background: black;
   }
-}*/
+}
