@@ -1,7 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 
-export const WorkContainer: React.FC = ({children}) => (
+type ContainerProps = {
+    children: React.ReactNode; //👈 children prop typr
+  };
+
+export const WorkContainer: React.FC<ContainerProps> = ({children}) => (
     <div className='grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen'>
         {children}
         </div>
@@ -14,7 +18,12 @@ export const WorkBackground: React.FC = () => (
     </div>
 )
 
-export const WorkLeft: React.FC<{progress: number}> = ({children, progress}) => {
+type WorkProps = {
+    children: React.ReactNode // children prop typr
+    progress: number
+  };
+
+export const WorkLeft: React.FC<WorkProps> = ({children, progress}) => {
     let translateY = Math.max(0, 50 - progress * 3 * 50)
     if(progress > 0.85) translateY = Math.max(-50, -(progress - 0.85)* 2 * 50)
     return (
@@ -30,7 +39,7 @@ export const WorkLeft: React.FC<{progress: number}> = ({children, progress}) => 
     )
 }
 
-export const WorkRight: React.FC<{progress: number}> = ({children, progress}) => {
+export const WorkRight: React.FC<WorkProps> = ({children, progress}) => {
     let translateY = Math.max(-50, -(progress - 0.5) * 50)
     return (
         <div className='flex flex-1 lg:items-center justify-center h-screen' style={{
