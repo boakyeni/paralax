@@ -20,20 +20,22 @@ const Works = () => <TileWrapper numOfPages={3}>
         <Tile page={1} renderContent={({ progress }) => (
             <WorkContainer>
             <WorkLeft progress={progress}>
-                <div>Turn on our notifications</div>
+                <div>Turn on our</div>
+                <div className='text-4xl md:text-5xl font-semibold trancking-tight'>Notifications</div>
             </WorkLeft>
             <WorkRight progress={progress}>
-            <Image src="/assets/Instagram.png" layout='responsive' width={840} height={840} alt="spotify logo"/>
+            <Image src="/assets/Instagram.png" layout='responsive' width={840} height={840} alt="instagram logo"/>
             </WorkRight>
             </WorkContainer>
         )} ></Tile>
         <Tile page={2} renderContent={({ progress }) => (
             <WorkContainer>
             <WorkLeft progress={progress}>
-                <div>Become a worldwide creative</div>
+                <div>Become a</div>
+                <div className='text-4xl md:text-5xl font-semibold trancking-tight'>Connected Creative</div>
             </WorkLeft>
             <WorkRight progress={progress}>
-
+            <Image src="/assets/Discord.svg" layout='responsive' width={840} height={840} alt="discord logo"/>
             </WorkRight>
             </WorkContainer>
         )} ></Tile>
