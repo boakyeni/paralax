@@ -2,10 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
+  /*experimental: {
     images: {
       unoptimized: true
     }
+  }*/
+  images: {
+    loader: 'akamai',
+    path: '',
   }
 }
 
