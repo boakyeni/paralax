@@ -22,7 +22,7 @@ const Testimonials: React.FC = () => (
         </CarouselItem>
         <CarouselItem index={3}>
             <Review by="test">
-                it's a good bookclub
+                it&apos;s a good bookclub
             </Review>
         </CarouselItem>
     </Carousel>
