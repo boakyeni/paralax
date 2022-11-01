@@ -1,0 +1,16 @@
+[
+    {
+        "id" : "price_1LyJnBIDRmIeOTWSedy4bMmb", 
+        "name": "DTLABC EXCLUSIVE Hoodie - Medium",
+        "price": 50,
+        "image": "/assets/hoodie.png",
+        "quantity": 1
+    },
+    {
+        "id" : "price_1LyP2NIDRmIeOTWS49lvE1UL", 
+        "name": "DTLABC EXCLUSIVE Hoodie - Small",
+        "price": 50,
+        "image": "/assets/hoodie.png",
+        "quantity": 1
+    }
+]

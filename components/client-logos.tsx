@@ -6,28 +6,28 @@ const ClientLogos: React.FC = () => (
     <>
     <SliderContainer className="" contentWidth={1290} initialOffsetX={0}>
         <SliderItem width={150}>
-        <Image src='/assets/Patreon.png' width={150} height={50} alt="We Care" objectFit="contain" />
+        <Image src='/assets/4agreeimg.jpg' width={150} height={150} alt="We Care" objectFit="contain" />
         </SliderItem>
         <SliderItem width={150}>
-        <Image src='/assets/Patreon.png' width={150} height={50} alt="We Care" objectFit="contain" />
+        <Image src='/assets/4agreeimg.jpg' width={150} height={150} alt="We Care" objectFit="contain" />
         </SliderItem>
         <SliderItem width={150}>
-        <Image src='/assets/Patreon.png' width={150} height={50} alt="We Care" objectFit="contain" />
+        <Image src='/assets/4agreeimg.jpg' width={150} height={150} alt="We Care" objectFit="contain" />
         </SliderItem>
         <SliderItem width={150}>
-        <Image src='/assets/Patreon.png' width={150} height={50} alt="We Care" objectFit="contain" />
+        <Image src='/assets/4agreeimg.jpg' width={150} height={150} alt="We Care" objectFit="contain" />
         </SliderItem>
         <SliderItem width={150}>
-        <Image src='/assets/Patreon.png' width={150} height={50} alt="We Care" objectFit="contain" />
+        <Image src='/assets/4agreeimg.jpg' width={150} height={150} alt="We Care" objectFit="contain" />
         </SliderItem>
         <SliderItem width={150}>
-        <Image src='/assets/Patreon.png' width={150} height={50} alt="We Care" objectFit="contain" />
+        <Image src='/assets/4agreeimg.jpg' width={150} height={150} alt="We Care" objectFit="contain" />
         </SliderItem>
         <SliderItem width={150}>
-        <Image src='/assets/Patreon.png' width={150} height={50} alt="We Care" objectFit="contain" />
+        <Image src='/assets/4agreeimg.jpg' width={150} height={150} alt="We Care" objectFit="contain" />
         </SliderItem>
         <SliderItem width={150}>
-        <Image src='/assets/Patreon.png' width={150} height={50} alt="We Care" objectFit="contain" />
+        <Image src='/assets/4agreeimg.jpg' width={150} height={150} alt="We Care" objectFit="contain" />
         </SliderItem>
     </SliderContainer>
     </>

@@ -1,5 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
+import NextLink from 'next/link'
+import { HTMLProps, FC } from 'react';
+import Image from 'next/image'
+import {Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react'
 
 type ContainerProps = {
     children: React.ReactNode; //👈 children prop typr
@@ -42,6 +46,7 @@ export const WorkLeft: React.FC<WorkProps> = ({children, progress}) => {
 export const WorkRight: React.FC<WorkProps> = ({children, progress}) => {
     let translateY = Math.max(-50, -(progress - 0.5) * 50)
     return (
+        
         <div className='flex flex-1 lg:items-center justify-center h-screen' style={{
             transform: `translateY(${translateY}px)`
         }}>
@@ -49,5 +54,46 @@ export const WorkRight: React.FC<WorkProps> = ({children, progress}) => {
                 {children}
             </div>
         </div>
+        
     )
+}
+interface LinkProps {
+    href: string
+    children: React.ReactNode
+}
+export const WorkLink: React.FC<LinkProps> = ({href, children}) => (
+    <Link href={href}><a target="_blank" rel="noreferrer" className="underline underline-offset-8 decoration-1">{children}</a></Link>
+)
+
+
+type WorkGridProps = {
+    children: React.ReactNode
+    progress: number
+    id: string
+    title: string
+    thumbnail: string
+};
+
+export const WorkGridItem: React.FC<WorkGridProps> = ({children, progress, id, title, thumbnail}) => {
+    let translateY = Math.max(-50, -(progress - 0.5) * 50)
+    return (
+    <div className='flex flex-1 lg:items-center justify-center h-screen' style={{
+            transform: `translateY(${translateY}px)`
+    }}>
+    <Box w="100%" >
+        <NextLink href={`/commerce/${id}`}>
+            <LinkBox cursor='pointer'>
+                <Image src={thumbnail} alt={title} className='' layout='responsive' width={840} height={840}/>
+                <LinkOverlay href={`/commerce/${id}`}>
+                    <Text mt={2} fontSize={20}>
+                        {title}
+                    </Text>
+                </LinkOverlay>
+                <Text fontSize={14}>{children}</Text>
+            </LinkBox>
+        </NextLink>
+    </Box>
+    </div>
+)
+
 }

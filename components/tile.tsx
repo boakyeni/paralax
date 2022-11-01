@@ -1,5 +1,7 @@
 import React, {useRef, useContext} from 'react'
 import { ScrollContext } from '../utils/scroll-observer'
+import NextLink from 'next/link'
+
 interface WrapperProps {
     numOfPages: number
     children: React.ReactNode
@@ -72,7 +74,7 @@ export const Tile: React.FC<Props> = ({page, renderContent}) => {
     return (
         <div ref={refContainer} className="absolute top-0 w-full"
         style={{
-            pointerEvents: progress >= 0 || progress >= 1 ? 'none' : undefined,
+            pointerEvents: progress <= 0 || progress >= 1 ? 'none' : undefined,
             opacity
         }}>{renderContent({progress})}</div>
     )
