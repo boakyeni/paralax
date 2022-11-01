@@ -8,7 +8,7 @@ import data from "../../data.json"
 
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+/*export const getServerSideProps: GetServerSideProps = async (context) => {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
         // https://github.com/stripe/stripe-node#configuration
         apiVersion: '2022-08-01',
@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             prices
         },
     }
-}
+}*/
 
 type Props = {
     prices: Stripe.Price[]
@@ -45,7 +45,7 @@ const Store: NextPage<Props> = ({prices}) => {
                     </h1>
                 </div>
                 <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
-                    {data.map(product => <Product product={product} />)}
+                    {data.map(product => <Product key={product.id} product={product} />)}
                 </div>
             </div>
         </main>

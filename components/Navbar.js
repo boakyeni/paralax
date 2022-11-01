@@ -13,7 +13,7 @@ const Navbar = () => {
     <section className="shadow-xl bg-black sticky top-0">
         <div className='container mx-auto py-2 text-[24px] flex justify-between items-center'>
             <div className='cursor-pointer text-white'>
-                <Link href="/">(It looks sus because we are out of stock, so don't buy anything)</Link>
+                <Link href="/">(It looks sus because we are out of stock, so don&apos;t buy anything)</Link>
             </div>
             <div className='relative cursor-pointer text-white'>
                 <Link href="/cart">

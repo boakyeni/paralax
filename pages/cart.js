@@ -14,15 +14,21 @@ const Cart = () => {
     cartItem.forEach(item => total += (item.price * item.quantity))
     return total
   }
+  const config = {
+    headers: { Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}` }
+  };
 
+  
   const createCheckoutSession = () => {
-    axios.post('api/checkout_sessions', {cartItem})
+    axios.post('api/checkout_sessions/', {cartItem}, config)
     .then(res => {
       console.log(res)
       window.location = res.data.sessionURL
     })
     .catch(err => console.log(err))
   }
+
+  
 
   return (
     <div>

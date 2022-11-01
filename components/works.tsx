@@ -23,7 +23,7 @@ const Works = () => <TileWrapper numOfPages={4}>
         <Tile page={1} renderContent={({ progress }) => (
             <WorkContainer>
             <WorkLeft progress={progress}>
-                <div>Read this month's</div>
+                <div>Read this month&apos;s</div>
                 <div className='text-4xl md:text-5xl font-semibold tracking-tight'>Book of Choice</div>
             </WorkLeft>
             <WorkRight progress={progress}>
