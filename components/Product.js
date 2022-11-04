@@ -6,8 +6,10 @@ import { toast } from 'react-hot-toast'
 
 
 
+
 const Product = ({product}) => {
     const [cartItem, setCartItem] = useRecoilState(cartState)
+
 
     const addItemToCart = () => {
 

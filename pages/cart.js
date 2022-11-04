@@ -4,10 +4,15 @@ import { useRecoilState } from 'recoil'
 import { cartState } from '../atoms/cartState'
 import CartList from '../components/CartList'
 import axios from "axios"
+import { useEffect } from 'react'
+import { useSsrComplectedState } from '../atoms/persistAtomEffect'
 
 
 const Cart = () => {
   const [cartItem, setCartItem] = useRecoilState(cartState)
+
+  const setSsrCompleted = useSsrComplectedState()
+  useEffect(setSsrCompleted, [setSsrCompleted])
 
   const totalPrice = () => {
     let total = 0
