@@ -9,6 +9,7 @@ import { useSsrComplectedState } from '../atoms/persistAtomEffect'
 
 
 const Cart = () => {
+  //add remove from cart and change quantity
   const [cartItem, setCartItem] = useRecoilState(cartState)
 
   const setSsrCompleted = useSsrComplectedState()

@@ -8,6 +8,8 @@ import Works from '../components/works'
 import TrustedBy from '../components/trustedBy'
 import ContactUs from '../components/contactUs'
 import Footer from '../components/footer'
+import Link from 'next/link'
+import StoreLink from '../components/storeLink'
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +19,7 @@ const Home: NextPage = () => {
         <meta name="description" content="The Downtown Los Angeles BookClub currated specifically for creatives" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     
+     <StoreLink/>
      <Masthead/>
      <AboutUs />
      <Skills />
