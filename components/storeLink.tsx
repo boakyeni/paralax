@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const StoreLink: React.FC = () => {
 
-
+    //added a transparent photo to load so that image would pop in with bottom arrow on main page
     const [imageLoaded, setImageLoaded] = useState(false)
     const refContainer = useRef<HTMLDivElement>(null)
     const { scrollY } = useContext(ScrollContext)

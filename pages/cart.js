@@ -4,13 +4,16 @@ import { useRecoilState } from 'recoil'
 import { cartState } from '../atoms/cartState'
 import CartList from '../components/CartList'
 import axios from "axios"
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSsrComplectedState } from '../atoms/persistAtomEffect'
+
 
 
 const Cart = () => {
   //add remove from cart and change quantity
   const [cartItem, setCartItem] = useRecoilState(cartState)
+  
+  const [isLoading, setLoading] = useState(false)
 
   const setSsrCompleted = useSsrComplectedState()
   useEffect(setSsrCompleted, [setSsrCompleted])
@@ -47,7 +50,14 @@ const Cart = () => {
         {cartItem.length > 0 && (<div className='max-w-[800px] mx-auto mt-4'>
           <h2 className='text-right text-3xl font-bold'>Total: ${totalPrice()}</h2>
           <button
-            className='text-right bg-red-600 text-white py-4 px-12 mt-4 block mx-auto hover:bg-red-800' onClick={createCheckoutSession}>Checkout</button>
+            className='text-right bg-red-600 text-white py-4 px-12 mt-4 block mx-auto hover:bg-red-800' onClick={() => 
+              {
+                setLoading(true)
+                setTimeout(function(){ 
+                  createCheckoutSession();
+               }, 1000);
+              }}>
+            {isLoading ? "Loading..." : "Checkout" }</button>
         </div>)}
       </div>
     </div>
